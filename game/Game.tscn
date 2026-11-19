@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://brkolsttb74p3" path="res://glTF/Pebble_Square_5.gltf" id="35_68r7h"]
 [ext_resource type="PackedScene" uid="uid://dbji7r18gi366" path="res://glTF/Pebble_Square_4.gltf" id="36_7vltt"]
 [ext_resource type="PackedScene" uid="uid://bcxkyy8kmf0f0" path="res://glTF/Rock_Medium_3.gltf" id="37_hxy8k"]
-[ext_resource type="PackedScene" uid="uid://dcwu8crc30pjw" path="res://glTF/DeadTree_5.gltf" id="38_2t1a5"]
 [ext_resource type="PackedScene" uid="uid://dn86abtosob3p" path="res://glTF/DeadTree_4.gltf" id="39_8576b"]
 
 [sub_resource type="Sky" id="Sky_13qdw"]
@@ -897,9 +896,6 @@ transform = Transform3D(3.0195684, 0, -1.5518475, 0, 3.3949997, 0, 1.5518475, 0,
 [node name="Rock_Medium_32" parent="Environment5/Rock_Medium_32/Rock_Medium_32" unique_id=1460579877 instance=ExtResource("37_hxy8k")]
 transform = Transform3D(-0.621138, 0, 0.8153603, 0, 1.025, 0, -0.8153603, 0, -0.621138, -3.9499998, -0.7199999, 1.1699998)
 
-[node name="DeadTree_52" parent="Environment5" unique_id=668347067 instance=ExtResource("38_2t1a5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.931735, -3.673583, -20.494545)
-
 [node name="DeadTree_42" parent="Environment5" unique_id=1128433224 instance=ExtResource("39_8576b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4094605, -0.5727234, -18.35546)
 
@@ -916,7 +912,7 @@ alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_b1lj4")
 animation = &"shoot"
-frame_progress = 0.3724524
+frame_progress = 0.18334311
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=991845996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6350818, 6.4467835)
