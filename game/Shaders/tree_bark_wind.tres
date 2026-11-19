@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://trjk35jnti3t"]
+
+[ext_resource type="Shader" uid="uid://ci2aokwb3q8vp" path="res://Shaders/grass_sway.gdshader" id="1_i5u3f"]
+[ext_resource type="Texture2D" uid="uid://dhh1sdq83xr4b" path="res://glTF/Bark_NormalTree.png" id="2_i5u3f"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_i5u3f")
+shader_parameter/albedo_texture = ExtResource("2_i5u3f")
+shader_parameter/use_texture = true
+shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/alpha_cutoff = 0.5
+shader_parameter/sway_strength = 0.01
+shader_parameter/sway_speed = 1.2
+shader_parameter/sway_scale = 0.7
+shader_parameter/bend_power = 2.0
+shader_parameter/flutter = 0.02

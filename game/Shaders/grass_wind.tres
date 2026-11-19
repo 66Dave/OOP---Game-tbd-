@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d3odfpohgtqlv"]
+
+[ext_resource type="Shader" uid="uid://ci2aokwb3q8vp" path="res://Shaders/grass_sway.gdshader" id="1_883f7"]
+[ext_resource type="Texture2D" uid="uid://d28akh7gn7e88" path="res://glTF/Grass.png" id="2_i5ubl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_883f7")
+shader_parameter/albedo_texture = ExtResource("2_i5ubl")
+shader_parameter/use_texture = true
+shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/alpha_cutoff = 0.5
+shader_parameter/sway_strength = 0.1
+shader_parameter/sway_speed = 2.0
+shader_parameter/sway_scale = 0.7
+shader_parameter/bend_power = 1.0
+shader_parameter/flutter = 0.0
