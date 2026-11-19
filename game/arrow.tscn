@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://0vwjsmim8e36"]
+
+[ext_resource type="Script" uid="uid://dnlvlqigrib2f" path="res://scripts/Arrow.cs" id="1_2ndhl"]
+[ext_resource type="Texture2D" uid="uid://bnuche1ly7s32" path="res://sprites/Main Character/Arrow.png" id="2_acd0x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(0.23120117, 0.65527344, 0.32714844)
+
+[node name="Arrow" type="Area3D" unique_id=677214681]
+script = ExtResource("1_2ndhl")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1136820057]
+transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.09719646, 1.093912, 0.04687357)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_acd0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=506669142]
+transform = Transform3D(1, 0, 0, 0, 0.9921147, -0.12533322, 0, 0.12533322, 0.9921147, -0.00028300285, 1.1520902, 0.11656016)
+shape = SubResource("BoxShape3D_xrivr")
