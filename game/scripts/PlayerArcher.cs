@@ -11,15 +11,19 @@ public partial class PlayerArcher : CharacterBody3D
 	[Export] public float MoveSpeed = 6f;      // left/right speed
 	[Export] public float LimitX = 4f;         // how far from the middle he can go
 	[Export] public PackedScene ArrowScene;    // drag arrow.tscn here in the Inspector
-	[Export] public int ReleaseFrame = 5;      // frame in ArcherShoot where the arrow leaves the bow
+	[Export] public int ReleaseFrame = 5 ;      // frame in ArcherShoot where the arrow leaves the bow
+	[Export] public int MaxHealth = 10;         // spider hits before game over
 
 	private AnimatedSprite3D _sprite;
 	private Node3D _muzzle;
+	private int _health;
 
 	public override void _Ready()
 	{
 		_sprite = GetNode<AnimatedSprite3D>("AnimatedSprite3D");
 		_muzzle = GetNode<Node3D>("Muzzle");
+		_health = MaxHealth;
+		AddToGroup("player");                  // Spider.cs finds the player through this group
 
 		_sprite.FrameChanged += OnFrameChanged;
 		_sprite.Play("shoot");                 // loops forever = shoots forever
@@ -33,6 +37,19 @@ public partial class PlayerArcher : CharacterBody3D
 		Vector3 pos = Position;
 		pos.X = Mathf.Clamp(pos.X + dir * MoveSpeed * (float)delta, -LimitX, LimitX);
 		Position = pos;
+	}
+
+	// Called by Spider.cs when a spider reaches the player
+	public void TakeHit()
+	{
+		_health--;
+		GD.Print($"Player hit! Health: {_health}");
+
+		if (_health <= 0)
+		{
+			// Deferred: reloading inside a physics callback can crash
+			GetTree().CallDeferred(SceneTree.MethodName.ReloadCurrentScene);
+		}
 	}
 
 	// Spawn an arrow exactly when the animation releases the string

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnuche1ly7s32" path="res://sprites/Main Character/Arrow.png" id="2_acd0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
-size = Vector3(0.23120117, 0.65527344, 0.32714844)
+size = Vector3(0.23120117, 2.5136719, 0.32714844)
 
 [node name="Arrow" type="Area3D" unique_id=677214681]
 script = ExtResource("1_2ndhl")
@@ -17,5 +17,5 @@ texture_filter = 0
 texture = ExtResource("2_acd0x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=506669142]
-transform = Transform3D(1, 0, 0, 0, 0.9921147, -0.12533322, 0, 0.12533322, 0.9921147, -0.00028300285, 1.1520902, 0.11656016)
+transform = Transform3D(1, 0, 0, 0, 0.9921147, -0.12533322, 0, 0.12533322, 0.9921147, -0.00028300285, 0.230218, 0.00010062754)
 shape = SubResource("BoxShape3D_xrivr")
