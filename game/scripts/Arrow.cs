@@ -9,6 +9,7 @@ public partial class Arrow : Area3D
 {
 	[Export] public float Speed = 25f;      // meters per second
 	[Export] public float Lifetime = 2f;    // seconds before it disappears
+	[Export] public int Damage = 1;         // set by PlayerArcher when fired (upgradable)
 
 	// Physics layer numbers (match Project Settings > Layer Names > 3D Physics)
 	[Export(PropertyHint.Range, "1,32")] public int ProjectileLayer = 3;
@@ -54,7 +55,7 @@ public partial class Arrow : Area3D
 		{
 			if (spider.IsDead)
 				return;              // already dying: let the arrow fly on
-			spider.TakeDamage(1);    // flashes white, dies after MaxHealth hits
+			spider.TakeDamage(Damage); // flashes white, dies when its health runs out
 		}
 		else
 		{

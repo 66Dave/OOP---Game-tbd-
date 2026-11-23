@@ -26,10 +26,10 @@ public partial class EnemySpawner : Node3D
 
 		if (Variants.Count == 0)
 		{
-			//                         name      weight  hp  speed  scale  tint
-			Variants.Add(new SpiderVariant("Small",  6f,  1,  5.5f, 0.7f, Colors.White));
-			Variants.Add(new SpiderVariant("Normal", 3f,  3,  4.0f, 1.0f, Colors.White));
-			Variants.Add(new SpiderVariant("Big",    1f, 10,  2.5f, 1.6f, new Color(1f, 0.35f, 0.35f)));
+			//                              name    weight  hp  speed scale  tint                          atkSpd points gold
+			Variants.Add(new SpiderVariant("Small",  6f,   1, 5.5f, 0.7f, Colors.White,                  1.5f,  10,  1, 1));
+			Variants.Add(new SpiderVariant("Normal", 3f,   3, 4.0f, 1.0f, Colors.White,                  1.0f,  25,  2, 3));
+			Variants.Add(new SpiderVariant("Big",    1f,  10, 2.5f, 1.6f, new Color(1f, 0.35f, 0.35f),   0.8f, 100,  8, 12));
 		}
 
 		if (SpiderScene == null)
@@ -63,6 +63,10 @@ public partial class EnemySpawner : Node3D
 			s.MaxHealth = v.Health;
 			s.Speed = v.Speed;
 			s.Tint = v.Tint;
+			s.AttackSpeed = v.AttackSpeed;
+			s.Points = v.Points;
+			s.GoldMin = v.GoldMin;
+			s.GoldMax = v.GoldMax;
 			s.RoadLimitX = LimitX;
 			s.Scale = Vector3.One * v.Scale;
 		}

@@ -13,6 +13,9 @@ public partial class Spider : Area3D
 	[Export] public int MaxHealth = 3;           // arrows needed to kill it
 	[Export] public float Speed = 4f;            // meters per second down the road (toward +Z)
 	[Export] public Color Tint = Colors.White;   // set by EnemySpawner per variant (e.g. red for big spiders)
+	[Export] public int Points = 25;             // score for killing it
+	[Export] public int GoldMin = 1;             // gold dropped on death (random between min and max)
+	[Export] public int GoldMax = 3;
 
 	[ExportGroup("Movement")]
 	[Export] public float RoadLimitX = 4f;       // wanders within -RoadLimitX..RoadLimitX
@@ -218,6 +221,9 @@ void fragment() {
 			IsDead = true;
 			_attacking = false;
 			SetDeferred(Area3D.PropertyName.Monitorable, false);
+
+			// Reward: points + gold coins
+			GameManager.Instance?.EnemyKilled(Points, _rng.RandiRange(GoldMin, GoldMax), GlobalPosition);
 		}
 	}
 
